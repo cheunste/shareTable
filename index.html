@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Whiteboard</title>
+	<style>
+
+
+		table{
+	//		table-layout:fixed;
+			width: 100%;
+			border: 1px	 solid black;
+			border="0"; 
+			
+		}
+		.center{
+			text-align: center; /* center checkbox horizontally */
+			vertical-align: middle; /* center checkbox vertically */
+			text-align:center;
+			vertical-align:middle;
+		}
+		header{
+			color:blue;
+		}
+	</style>
+	<script src="/lib/jquery-1.11.2.min.js"></script>
+	<script src="/lib/jquery-ui.min.js"></script>
+	<script src="/lib/colResizable-1.5.min.js"></script>
+
+	<script src="/channel/bcsocket.js"></script>
+	<script src="/json/test.json"></script>
+	<script src="/webclient/share.uncompressed.js"></script>
+	<script src="/webclient/textarea.js"></script>
+	<script src="/webclient/radioSel.js"></script>
+	<script src="/webclient/checkbox.js"></script>
+	<script src="/webclient/json.uncompressed.js"></script>
+
+	<script src="./javascript/setup.js"></script>
+	<!--IMPORTANT. Logic needs to go below setup-->
+	<script src="./javascript/logic.js"></script>
+	<script src="./javascript/tableStretch.js"></script>
+
+</head>
+<body>
+	<table id="siteTable" cellpadding="0" cellspacing="0">
+	<!--
+		<colgroup span="4" class="columns">
+			<col class="column1">
+			<col class="col2" span ="2">
+		</colgroup>
+	-->	
+	</table>
+	</div>
+	
+</body>
+</html>
