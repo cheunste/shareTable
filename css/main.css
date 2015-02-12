@@ -15,7 +15,6 @@
 }
 
 th{
-   background-image:url('../img/th.png');
    height:30px;
    background-repeat:no-repeat;
    color:white;
@@ -84,7 +83,7 @@ td.bottom{
 }
 
 th{
-   background-image:url('../img/th.png');
+   //background-image:url('../img/th.png');
    height:30px;
    background-repeat:no-repeat;
    color:white;
@@ -115,7 +114,7 @@ td.bottom{
 	width:20px;
 	height:15px;
 	margin-top:-3px;
-	background-image:url('../img/grip.png');
+	//background-image:url('../img/grip.png');
 	margin-left:-5px;
 	position:relative;
 	z-index:88;
