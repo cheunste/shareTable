@@ -8,11 +8,17 @@
 .center{
 	text-align:left;
 }
-
+.checkCenter{
+			text-align: center; /* center checkbox horizontally */
+			vertical-align: middle; /* center checkbox vertically */
+			text-align:center;
+			vertical-align:middle;
+		}
 #siteTable{
 	/*width:100%;*/
 	/*max-width:1600px;*/
 }
+header{color:blue;}
 
 th{
    height:30px;
