@@ -95,6 +95,3 @@ function updateCheckInput(id,mode){
 	});
 
 }
-
-
-

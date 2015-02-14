@@ -30,7 +30,7 @@ $(document).ready(function(){
 		var row=$(	
 		"<tr>"+
 			//'<td class="center"><input type="checkbox" id="'+siteName+'-onSite"/>			</td>'+	
-			'<td class="center">'+
+			'<td class="checkCenter">'+
 				'<input type ="checkbox" id="'+siteName+'-check3">'+
 			'</td>'+
 			'<td><input type="text" id="'+siteName+'-onoffDate">							</td>'+
