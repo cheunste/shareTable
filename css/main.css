@@ -15,7 +15,10 @@
 	cellspacing="0";
 	width="5000"
 }
-header{color:blue;}
+header{
+	color:blue;
+	width:140px;
+}
 
 th{
    height:30px;
