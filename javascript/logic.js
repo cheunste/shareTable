@@ -63,9 +63,11 @@ function updateCheckInput(id,mode){
 
 						if(val2==onState){
 							$(elem).prop('checked',true);
+							//add code to state on off date auotmatically
 						}
 						else if (val2==offState){
 							$(elem).prop('checked',false);
+							//add code to state on off date auotmatically
 						}
 					}
 				});
@@ -77,10 +79,12 @@ function updateCheckInput(id,mode){
 			var getState=$state.get();
 			if(getState==onState){
 				$(elem).prop('checked',true);
+				//add code to state on off date auotmatically
 			}
 			if(getState==offState){
 
 				$(elem).prop('checked',false);
+				//add code to state on off date auotmatically
 			}
 		}
 		else{
