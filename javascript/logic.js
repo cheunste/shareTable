@@ -110,14 +110,15 @@ function dateSet(elem,state){
 
 	//Date and time stamp related:
 	var dt		=new Date();
-	var month	=dt.getMonth();
-	var day		=dt.getDate();
-	var hour	=dt.getHours();
-	var minute	=dt.getMinutes();
+	var month	=dt.getMonth().toString();
+	var day		=dt.getDate().toString();
+	var hour	=dt.getHours().toString();
+	var minute	=dt.getMinutes().toString();
 
 	var onOffTag	=document.getElementById(siteOnOffDate);
 
-	$(onOffTag).val("Time test "+state);
+	var testLine=(state ? "ON": "OFF")+" "+month+"/"+day+" "+hour+":"+minute;
+
 	//Open up a sharejs document. update the snapshot and then update to all users
 	sharejs.open(siteOnOffDate, 'text', function(error, doc) {
 			if(error){
@@ -125,8 +126,8 @@ function dateSet(elem,state){
 			}
 			else{
 				onOffTag.disabled=false;
-				doc.snapshot=("Time test2 " +state).toString();
-				doc.attach_textarea(onOffTag);
+				doc.del(0,doc.getText().length);
+				doc.insert(0,testLine);
 			}
 	});
 //	return;
