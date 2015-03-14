@@ -12,7 +12,7 @@ $(function(){
 	$(checkBtn).change(function(op){
 		updateCheckInput(this.id);
 	});
-	console.log("$STATE: " +$state);	
+	//console.log("$STATE: " +$state);	
 
 });
 
@@ -75,6 +75,7 @@ function updateCheckInput(id,mode){
 				});
 			});
 
+
 		});
 
 		//You do not need to calll dateSet in the onload state since the database will auotomatically load the last known state
@@ -84,7 +85,6 @@ function updateCheckInput(id,mode){
 				$(elem).prop('checked',true);
 			}
 			if(getState==offState){
-
 				$(elem).prop('checked',false);
 			}
 		}
@@ -104,7 +104,30 @@ function updateCheckInput(id,mode){
 //This function puts the timestamp of the site in the on/off section
 function dateSet(elem,state){
 
-	console.log("This is the elem tag");
-	console.log(elem);
-	return;
+	//Import from parameters
+	siteName		=$(elem).attr("id").toString();
+	siteOnOffDate	=(siteName.slice(0,-(("check3").length+1)))+'-onoffDate';
+
+	//Date and time stamp related:
+	var dt		=new Date();
+	var month	=dt.getMonth();
+	var day		=dt.getDate();
+	var hour	=dt.getHours();
+	var minute	=dt.getMinutes();
+
+	var onOffTag	=document.getElementById(siteOnOffDate);
+
+	$(onOffTag).val("Time test "+state);
+	//Open up a sharejs document. update the snapshot and then update to all users
+	sharejs.open(siteOnOffDate, 'text', function(error, doc) {
+			if(error){
+				console.log("An Error occured: "+error+". Please contact Stephen.");
+			}
+			else{
+				onOffTag.disabled=false;
+				doc.snapshot=("Time test2 " +state).toString();
+				doc.attach_textarea(onOffTag);
+			}
+	});
+//	return;
 }
