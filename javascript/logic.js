@@ -64,10 +64,12 @@ function updateCheckInput(id,mode){
 						if(val2==onState){
 							$(elem).prop('checked',true);
 							//add code to state on off date auotmatically
+							dateSet(elem,true);
 						}
 						else if (val2==offState){
 							$(elem).prop('checked',false);
 							//add code to state on off date auotmatically
+							dateSet(elem,false);
 						}
 					}
 				});
@@ -75,16 +77,15 @@ function updateCheckInput(id,mode){
 
 		});
 
+		//You do not need to calll dateSet in the onload state since the database will auotomatically load the last known state
 		if(mode==="ONLOAD"){
 			var getState=$state.get();
 			if(getState==onState){
 				$(elem).prop('checked',true);
-				//add code to state on off date auotmatically
 			}
 			if(getState==offState){
 
 				$(elem).prop('checked',false);
-				//add code to state on off date auotmatically
 			}
 		}
 		else{
@@ -100,5 +101,10 @@ function updateCheckInput(id,mode){
 
 }
 
+//This function puts the timestamp of the site in the on/off section
+function dateSet(elem,state){
 
-
+	console.log("This is the elem tag");
+	console.log(elem);
+	return;
+}
