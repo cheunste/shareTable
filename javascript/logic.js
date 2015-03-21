@@ -45,8 +45,6 @@ function updateCheckInput(id,mode){
 	var elem = document.getElementById(id);
 	var onState	=1;
 	var offState=0;
-	console.log("RADDA RADDA: "+elem);
-
 	var $state;
 	sharejs.open(id,"json",function(error,doc){
 
@@ -56,7 +54,6 @@ function updateCheckInput(id,mode){
 
 		$state = doc.at('state');
 		doc.on('change',function(op){
-			console.log("OP: "+op);
 			$.each(op,function(key,val){
 				$.each(val,function(key2,val2){
 					if(key2=="oi"){
@@ -109,8 +106,7 @@ function dateSet(elem,state){
 
 	//Date and time stamp related:
 	var dt		=new Date();
-	//var month	=(dt.getMonth()+1).toString();
-	var month	=(dt.getMonth()+1);
+	var month	=(dt.getMonth()+1).toString();
 	var day		=dt.getDate().toString();
 	var hour	=dt.getHours().toString();
 	var minute	=dt.getMinutes().toString();
