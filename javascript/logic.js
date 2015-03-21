@@ -12,7 +12,7 @@ $(function(){
 	$(checkBtn).change(function(op){
 		updateCheckInput(this.id);
 	});
-	console.log("$STATE: " +$state);	
+	//console.log("$STATE: " +$state);	
 
 });
 
@@ -63,23 +63,28 @@ function updateCheckInput(id,mode){
 
 						if(val2==onState){
 							$(elem).prop('checked',true);
+							//add code to state on off date auotmatically
+							dateSet(elem,true);
 						}
 						else if (val2==offState){
 							$(elem).prop('checked',false);
+							//add code to state on off date auotmatically
+							dateSet(elem,false);
 						}
 					}
 				});
 			});
 
+
 		});
 
+		//You do not need to calll dateSet in the onload state since the database will auotomatically load the last known state
 		if(mode==="ONLOAD"){
 			var getState=$state.get();
 			if(getState==onState){
 				$(elem).prop('checked',true);
 			}
 			if(getState==offState){
-
 				$(elem).prop('checked',false);
 			}
 		}
@@ -94,4 +99,36 @@ function updateCheckInput(id,mode){
 
 	});
 
+}
+//This function puts the timestamp of the site in the on/off section
+function dateSet(elem,state){
+
+	//Import from parameters
+	siteName		=$(elem).attr("id").toString();
+	siteOnOffDate	=(siteName.slice(0,-(("check3").length+1)))+'-onoffDate';
+
+	//Date and time stamp related:
+	var dt		=new Date();
+	//var month	=(dt.getMonth()+1).toString();
+	var month	=(dt.getMonth()+1);
+	var day		=dt.getDate().toString();
+	var hour	=dt.getHours().toString();
+	var minute	=dt.getMinutes().toString();
+
+	var onOffTag	=document.getElementById(siteOnOffDate);
+
+	var dateString=(state ? "ON": "OFF")+" "+month+"/"+day+" "+hour+":"+minute;
+
+	//Open up a sharejs document. update the snapshot and then update to all users
+	sharejs.open(siteOnOffDate, 'text', function(error, doc) {
+			if(error){
+				console.log("An Error occured: "+error+". Please contact Stephen.");
+			}
+			else{
+				onOffTag.disabled=false;
+				doc.del(0,doc.getText().length);
+				doc.insert(0,dateString);
+			}
+	});
+//	return;
 }
