@@ -4,8 +4,8 @@ $(document).ready(function(){
 	var siteArray = [
 		'site01', 'site02', 'site03', 'site04', 'site05', 'site06', 'site07', 'site08', 'site09', 'site10', 'site11', 'site12', 'site13', 'site14', 'site15', 'site16', 'site17', 'site18', 'site19', 'site20', 'site21', 'site22', 'site23', 'site24', 'site25', 'site26', 'site27', 'site28', 'site29', 'site30', 'site31', 'site32', 'site33', 'site34', 'site35', 'site36', 'site37', 'site38', 'site39', 'site40', 'site41', 'site42', 'site43', 'site44', 'site45', 'site46', 'site47', 'site48', 'site49', 'site50'
 	];
-
-	var siteArray=[
+/*
+	var siteArraysReal=[
 		'Baffin Bay',
 		'Barton',
 		'Barton Chapel',
@@ -53,6 +53,7 @@ $(document).ready(function(){
 		'Twin Buttes',
 		'Winnebago'
 	];
+	*/
 
 	siteArray.sort();
 
