@@ -85,7 +85,8 @@ $(document).ready(function(){
 				'<input type ="checkbox" id="'+siteName+'-check3">'+
 			'</td>'+
 			'<td><input type="text" id="'+siteName+'-onoffDate">							</td>'+
-			'<td><input type="text" id="'+siteName+'">										</td>'+
+			//'<td><input type="text" id="'+siteName+'">										</td>'+
+			'<td><div id="'+siteName+'">'+siteName+											'</div></td>'+
 			'<td><input type="text" id="'+siteName+'-date">									</td>'+
 			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
 			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
