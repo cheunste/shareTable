@@ -36,7 +36,7 @@ function updateEntries(id){
 function updateRadioInput(id){
 }
 
-
+//This function specifically updates the state of the checkbox
 function updateCheckInput(id,mode){
 
 	var elem = document.getElementById(id);
@@ -88,7 +88,6 @@ function updateCheckInput(id,mode){
 			});
 		});
 	});
-	console.log("???????");
 	return;
 }
 //This function puts the timestamp of the site in the on/off section
