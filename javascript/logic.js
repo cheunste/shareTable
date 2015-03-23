@@ -1,19 +1,15 @@
 
 $(function(){
 	var field= $('input[type="text"]');
-	//var radioInput=$('input[type="radio"]');
 	var checkBtn=$("input[type='checkbox']");
 	var $state;
 	$(field).change(function(op){
-			
 		updateEntries(this.id);
 	});
 
 	$(checkBtn).change(function(op){
 		updateCheckInput(this.id);
 	});
-	//console.log("$STATE: " +$state);	
-
 });
 
 //This function handles all the updates from any input field and 
@@ -40,6 +36,7 @@ function updateEntries(id){
 function updateRadioInput(id){
 }
 
+
 function updateCheckInput(id,mode){
 
 	var elem = document.getElementById(id);
@@ -53,29 +50,7 @@ function updateCheckInput(id,mode){
 		}
 
 		$state = doc.at('state');
-		doc.on('change',function(op){
-			$.each(op,function(key,val){
-				$.each(val,function(key2,val2){
-					if(key2=="oi"){
 
-						if(val2==onState){
-							$(elem).prop('checked',true);
-							//add code to state on off date auotmatically
-							dateSet(elem,true);
-						}
-						else if (val2==offState){
-							$(elem).prop('checked',false);
-							//add code to state on off date auotmatically
-							dateSet(elem,false);
-						}
-					}
-				});
-			});
-
-
-		});
-
-		//You do not need to calll dateSet in the onload state since the database will auotomatically load the last known state
 		if(mode==="ONLOAD"){
 			var getState=$state.get();
 			if(getState==onState){
@@ -88,21 +63,40 @@ function updateCheckInput(id,mode){
 		else{
 			if($(elem).is(':checked')===true){
 				$state.set(onState);
+				dateSet(elem,true);
 			}
 			else{
 				$state.set(offState);
+				dateSet(elem,false);
 			}
 		}
 
-	});
 
+		doc.on('change',function(op){
+			$.each(op,function(key,val){
+				$.each(val,function(key2,val2){
+					if(key2=="oi"){
+						if(val2==onState){
+							$(elem).prop('checked',true);
+						}
+						else if (val2==offState){
+							$(elem).prop('checked',false);
+						}
+					}
+
+				});
+			});
+		});
+	});
+	console.log("???????");
+	return;
 }
 //This function puts the timestamp of the site in the on/off section
 function dateSet(elem,state){
 
 	//Import from parameters
 	siteName		=$(elem).attr("id").toString();
-	siteOnOffDate	=(siteName.slice(0,-(("check3").length+1)))+'-onoffDate';
+	siteOnOffDate	=(siteName.slice(0,-(("check").length+1)))+'-onoffDate';
 
 	//Date and time stamp related:
 	var dt		=new Date();
@@ -110,21 +104,23 @@ function dateSet(elem,state){
 	var day		=dt.getDate().toString();
 	var hour	=dt.getHours().toString();
 	var minute	=dt.getMinutes().toString();
+	var milli	=dt.getMilliseconds().toString();
+	//var onOffTag	=document.getElementById(siteOnOffDate);
 
-	var onOffTag	=document.getElementById(siteOnOffDate);
+	var dateString=(state ? "ON": "OFF")+" "+month+"/"+day+" at "+hour+":"+minute;
 
-	var dateString=(state ? "ON": "OFF")+" "+month+"/"+day+" "+hour+":"+minute;
-
+	$("#"+siteOnOffDate).val(dateString);
+	$('#Baffin Bay-onoffDate').val(dateString);
 	//Open up a sharejs document. update the snapshot and then update to all users
 	sharejs.open(siteOnOffDate, 'text', function(error, doc) {
 			if(error){
 				console.log("An Error occured: "+error+". Please contact Stephen.");
 			}
 			else{
-				onOffTag.disabled=false;
 				doc.del(0,doc.getText().length);
 				doc.insert(0,dateString);
 			}
 	});
-//	return;
+	console.log("In dateset: "+hour+":"+minute+":"+milli);
+	//return;
 }

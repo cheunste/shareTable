@@ -76,17 +76,17 @@ $(document).ready(function(){
 
 		//Append to table
 		
-		siteName = siteArray[site]
+		siteName = siteArray[site].replace(" ","");
 		console.log(siteName);
 		var row=$(	
 		"<tr>"+
 			//'<td class="center"><input type="checkbox" id="'+siteName+'-onSite"/>			</td>'+	
 			'<td class="checkCenter">'+
-				'<input type ="checkbox" id="'+siteName+'-check3">'+
+				'<input type ="checkbox" id="'+siteName+'-check">'+
 			'</td>'+
 			'<td><input type="text" id="'+siteName+'-onoffDate">							</td>'+
 			//'<td><input type="text" id="'+siteName+'">										</td>'+
-			'<td><div id="'+siteName+'">'+siteName+											'</div></td>'+
+			'<td><div id="'+siteName+'">'+siteArray[site]+											'</div></td>'+
 			'<td><input type="text" id="'+siteName+'-date">									</td>'+
 			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
 			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
