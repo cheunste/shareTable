@@ -18,8 +18,8 @@ $(document).ready(function(){
 		'Cayuga Ridge',
 		'Colorado Green',
 		'Copper Crossing',
-		'Dillon, MVIII',
-		'Dry Lake I & II',
+		'Dillon MVIII',
+		'Dry Lake I and II',
 		'Elk River',
 		'Elm Creek',
 		'Elm Creek II',
@@ -30,18 +30,18 @@ $(document).ready(function(){
 		'Hay Canyon',
 		'Hoosac',
 		'Juniper Canyon',
-		'Klondike I, II',
-		'Klondike III, IIIA',
+		'Klondike I II',
+		'Klondike III IIIA',
 		'Leaning Juniper 2',
 		'Lempster',
 		'Locust Ridge',
 		'Locust Ridge II',
 		'Manzana',
 		'MinnDakota',
-		'Mopraine I & II',
+		'Moraine I and II',
 		'New Harvest',
 		'Pebble Springs',
-		'Penascal I & II',
+		'Penascal I and II',
 		'Providence Heights',
 		'Rugby',
 		'San Luis',
@@ -76,7 +76,8 @@ $(document).ready(function(){
 
 		//Append to table
 		
-		siteName = siteArray[site].replace(" ","");
+		//siteName = siteArray[site].replace(" and ","and").replace(" ","");
+		siteName = siteArray[site].replace(/ /g,"");
 		console.log(siteName);
 		var row=$(	
 		"<tr>"+
@@ -86,7 +87,7 @@ $(document).ready(function(){
 			'</td>'+
 			'<td><input type="text" id="'+siteName+'-onoffDate">							</td>'+
 			//'<td><input type="text" id="'+siteName+'">										</td>'+
-			'<td><div id="'+siteName+'">'+siteArray[site]+											'</div></td>'+
+			'<td><div id="'+siteName+'">'+siteArray[site].replace("and","&")+											'</div></td>'+
 			'<td><input type="text" id="'+siteName+'-date">									</td>'+
 			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
 			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
