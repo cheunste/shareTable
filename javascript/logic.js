@@ -103,14 +103,11 @@ function dateSet(elem,state){
 	var month	=(dt.getMonth()+1).toString();
 	var day		=dt.getDate().toString();
 	var hour	=dt.getHours().toString();
-	var minute	=dt.getMinutes().toString();
-	var milli	=dt.getMilliseconds().toString();
-	//var onOffTag	=document.getElementById(siteOnOffDate);
+	var minute	=(dt.getMinutes() <10 ? '0':'')+dt.getMinutes().toString();
 
 	var dateString=(state ? "ON": "OFF")+" "+month+"/"+day+" at "+hour+":"+minute;
 
 	$("#"+siteOnOffDate).val(dateString);
-	$('#Baffin Bay-onoffDate').val(dateString);
 	//Open up a sharejs document. update the snapshot and then update to all users
 	sharejs.open(siteOnOffDate, 'text', function(error, doc) {
 			if(error){
@@ -121,6 +118,4 @@ function dateSet(elem,state){
 				doc.insert(0,dateString);
 			}
 	});
-	console.log("In dateset: "+hour+":"+minute+":"+milli);
-	//return;
 }
