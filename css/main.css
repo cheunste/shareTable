@@ -21,11 +21,13 @@ header{
 }
 
 th{
-   height:30px;
-   background-repeat:no-repeat;
-   color:white;
-   text-shadow: #012b4d 2px 2px 2px;
-   text-align: center;   
+	//background-image:url('../img/th.png');
+	background-color:silver;
+	color:black;
+	font-size:16px;
+	height:30px;
+	background-repeat:no-repeat;
+	text-align: center;   
 }
 
 td{
@@ -87,12 +89,13 @@ td.bottom{
 }
 
 th{
-   background-image:url('../img/th.png');
-   height:30px;
-   background-repeat:no-repeat;
-   color:white;
-   text-shadow: #012b4d 2px 2px 2px;
-   text-align: center;   
+   //background-image:url('../img/th.png');
+   ////height:30px;
+   ////background-repeat:no-repeat;
+   //color:black;
+   ////text-shadow: #012b4d 2px 2px 2px;
+   //font-size:16px;
+   //text-align: center;   
 }
 
 td{
