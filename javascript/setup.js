@@ -88,9 +88,9 @@ $(document).ready(function(){
 			'<td class="yellow"><input class="yellow" type="text" id="'+siteName+'-onoffDate">							</td>'+
 			//'<td><input type="text" id="'+siteName+'">										</td>'+
 			'<td class="yellow"><div class="yellow" id="'+siteName+'">'+siteArray[site].replace("and","&")+											'</div></td>'+
-			'<td><input type="text" id="'+siteName+'-date">									</td>'+
-			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
-			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
+			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-date">									</td>'+
+			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-faults">								</td>'+
+			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-comms">								</td>'+
 			'<td class="green"><input class="green" type="text" id="'+siteName+'-endDate">								</td>'+
 			'<td class="green"><input class="green" type="text" id="'+siteName+'-onCallPrim">							</td>'+
 			'<td class="green"><input class="green" type="text" id="'+siteName+'-onCallSec">							</td>'+
