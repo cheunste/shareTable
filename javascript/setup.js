@@ -82,12 +82,12 @@ $(document).ready(function(){
 		var row=$(	
 		"<tr>"+
 			//'<td class="center"><input type="checkbox" id="'+siteName+'-onSite"/>			</td>'+	
-			'<td class="checkCenter">'+
+			'<td class="checkCenter yellow">'+
 				'<input type ="checkbox" id="'+siteName+'-check">'+
 			'</td>'+
-			'<td><input type="text" id="'+siteName+'-onoffDate">							</td>'+
+			'<td class="yellow"><input class="yellow" type="text" id="'+siteName+'-onoffDate">							</td>'+
 			//'<td><input type="text" id="'+siteName+'">										</td>'+
-			'<td><div id="'+siteName+'">'+siteArray[site].replace("and","&")+											'</div></td>'+
+			'<td class="yellow"><div class="yellow" id="'+siteName+'">'+siteArray[site].replace("and","&")+											'</div></td>'+
 			'<td><input type="text" id="'+siteName+'-date">									</td>'+
 			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
 			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
