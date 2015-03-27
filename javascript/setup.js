@@ -91,10 +91,10 @@ $(document).ready(function(){
 			'<td><input type="text" id="'+siteName+'-date">									</td>'+
 			'<td><input type="text" id="'+siteName+'-faults">								</td>'+
 			'<td><input type="text" id="'+siteName+'-comms">								</td>'+
-			'<td><input type="text" id="'+siteName+'-endDate">								</td>'+
-			'<td><input type="text" id="'+siteName+'-onCallPrim">							</td>'+
-			'<td><input type="text" id="'+siteName+'-onCallSec">							</td>'+
-			'<td><input type="text" id="'+siteName+'-notes">								</td>'+
+			'<td class="green"><input class="green" type="text" id="'+siteName+'-endDate">								</td>'+
+			'<td class="green"><input class="green" type="text" id="'+siteName+'-onCallPrim">							</td>'+
+			'<td class="green"><input class="green" type="text" id="'+siteName+'-onCallSec">							</td>'+
+			'<td class="green"><input class="green" type="text" id="'+siteName+'-notes">								</td>'+
 		"</tr>"	
 		);	
 		$(siteTable).append(row);	
