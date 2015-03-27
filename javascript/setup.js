@@ -81,13 +81,11 @@ $(document).ready(function(){
 		console.log(siteName);
 		var row=$(	
 		"<tr>"+
-			//'<td class="center"><input type="checkbox" id="'+siteName+'-onSite"/>			</td>'+	
 			'<td class="checkCenter yellow">'+
 				'<input type ="checkbox" id="'+siteName+'-check">'+
 			'</td>'+
 			'<td class="yellow"><input class="yellow" type="text" id="'+siteName+'-onoffDate">							</td>'+
-			//'<td><input type="text" id="'+siteName+'">										</td>'+
-			'<td class="yellow"><div class="yellow" id="'+siteName+'">'+siteArray[site].replace("and","&")+											'</div></td>'+
+			'<td class="yellow"><div class="yellow siteName" id="'+siteName+'">'+siteArray[site].replace("and","&")+'</div></td>'+
 			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-date">									</td>'+
 			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-faults">								</td>'+
 			'<td class="blue" ><input class="blue"  type="text" id="'+siteName+'-comms">								</td>'+
